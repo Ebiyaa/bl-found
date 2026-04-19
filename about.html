@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#f8f0e0",
+              "on-primary-container": "#491300",
+              "secondary-fixed": "#ffc5a6",
+              background: "#fef6e7",
+              "on-error-container": "#570008",
+              "on-primary-fixed-variant": "#591800",
+              "surface-tint": "#a03a0f",
+              "on-secondary-fixed": "#592500",
+              "on-tertiary-fixed-variant": "#00703f",
+              "on-tertiary-fixed": "#00502b",
+              "primary-fixed-dim": "#ed7244",
+              "on-primary-fixed": "#020000",
+              secondary: "#964400",
+              "inverse-on-surface": "#a29c8f",
+              "secondary-container": "#ffc5a6",
+              "on-tertiary": "#ccffd8",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-container": "#773400",
+              "on-background": "#322e25",
+              "tertiary-dim": "#005c33",
+              "surface-dim": "#dcd4c0",
+              "outline-variant": "#b3ac9f",
+              "error-dim": "#9f0519",
+              "surface-container": "#f0e7d6",
+              "primary-dim": "#902e02",
+              "on-error": "#ffefee",
+              "on-surface-variant": "#605b50",
+              primary: "#a03a0f",
+              "inverse-primary": "#fe7e4f",
+              "on-tertiary-container": "#006438",
+              "tertiary-fixed-dim": "#94f0b3",
+              "secondary-dim": "#833a00",
+              "on-secondary-fixed-variant": "#853b00",
+              error: "#b31b25",
+              "primary-fixed": "#fe7e4f",
+              outline: "#7c766a",
+              "surface-container-high": "#eae2d0",
+              "primary-container": "#fe7e4f",
+              "on-surface": "#322e25",
+              "surface-bright": "#fef6e7",
+              "surface-variant": "#e5dcc9",
+              "tertiary-container": "#a2ffc0",
+              "inverse-surface": "#110e06",
+              "secondary-fixed-dim": "#ffb286",
+              "error-container": "#fb5151",
+              "on-primary": "#ffefeb",
+              tertiary: "#006a3b",
+              surface: "#fef6e7",
+              "tertiary-fixed": "#a2ffc0",
+              "on-secondary": "#fff0e9",
+              "surface-container-highest": "#e5dcc9",
+            },
+            borderRadius: {
+              DEFAULT: "1rem",
+              lg: "2rem",
+              xl: "3rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Plus Jakarta Sans"],
+              body: ["Be Vietnam Pro"],
+              label: ["Plus Jakarta Sans"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      .tonal-transition {
+        transition: background-color 0.3s ease;
+      }
+      .editorial-shadow {
+        box-shadow: 0 20px 40px rgba(50, 46, 37, 0.06);
+      }
+      .asymmetric-clip {
+        clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background text-on-surface font-body leading-relaxed overflow-x-hidden"
+  >
+    <!-- TopAppBar -->
+    <header
+      class="fixed top-0 w-full z-50 bg-[#fef6e7]/80 dark:bg-stone-950/80 backdrop-blur-md shadow-[0_20px_40px_rgba(50,46,37,0.06)]"
+    >
+      <nav
+        class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto"
+      >
+        <div class="flex items-center gap-3 group cursor-pointer">
+          <span
+            class="material-symbols-outlined text-[#a03a0f] text-3xl"
+            data-icon="heart_plus"
+            >heart_plus</span
+          >
+          <span
+            class="text-2xl font-bold tracking-tighter text-[#a03a0f] dark:text-[#fe7e4f] font-headline"
+            >Beautiful Life Foundation</span
+          >
+        </div>
+        <div class="hidden md:flex items-center gap-10 font-headline">
+          <a
+            class="text-[#a03a0f] dark:text-[#fe7e4f] font-bold border-b-2 border-[#a03a0f] hover:text-[#fe7e4f] transition-colors duration-300"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="text-[#322e25] dark:text-[#fef6e7] opacity-80 hover:text-[#fe7e4f] transition-colors duration-300"
+            href="#"
+            >About Us</a
+          >
+          <a
+            class="text-[#322e25] dark:text-[#fef6e7] opacity-80 hover:text-[#fe7e4f] transition-colors duration-300"
+            href="programs.html"
+            >Our Programs</a
+          >
+          <a
+            class="text-[#322e25] dark:text-[#fef6e7] opacity-80 hover:text-[#fe7e4f] transition-colors duration-300"
+            href="getInvolved.html"
+            >Get Involved</a
+          >
+          <button
+            class="bg-primary-container text-on-primary-container px-8 py-2.5 rounded-full font-bold scale-95 active:scale-90 transition-transform hover:bg-primary-fixed-dim"
+          >
+            <a href="contact.html">Contact Us</a>
+          </button>
+        </div>
+        <button class="md:hidden p-2">
+          <span class="material-symbols-outlined text-primary" data-icon="menu"
+            >menu</span
+          >
+        </button>
+      </nav>
+    </header>
+
+    <main class="pt-24">
+      <!-- Hero Section: Who We Are -->
+      <section
+        class="relative min-h-[716px] flex items-center overflow-hidden py-20 px-8"
+      >
+        <div
+          class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+        >
+          <div class="relative z-10 space-y-8">
+            <span
+              class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label text-sm font-semibold tracking-wider uppercase"
+              >Established 2018</span
+            >
+            <h1
+              class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-primary leading-[1.1]"
+            >
+              Who We Are
+            </h1>
+            <p
+              class="text-xl md:text-2xl text-on-surface-variant font-medium leading-relaxed max-w-xl"
+            >
+              Founded in Ghana, the Beautiful Life Foundation is a radiant
+              beacon of hope, dedicated to nurturing the potential of every
+              child through community-driven support and sustainable care.
+            </p>
+            <div class="flex gap-4">
+              <div class="flex flex-col">
+                <span class="text-3xl font-bold text-primary">500+</span>
+                <span class="text-sm font-label text-on-surface-variant"
+                  >Children Supported</span
+                >
+              </div>
+              <div class="w-px h-12 bg-outline-variant/30 self-center"></div>
+              <div class="flex flex-col">
+                <span class="text-3xl font-bold text-primary">12</span>
+                <span class="text-sm font-label text-on-surface-variant"
+                  >Active Communities</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="relative group">
+            <div
+              class="absolute -inset-4 bg-primary/5 rounded-xl rotate-3 transition-transform group-hover:rotate-1"
+            ></div>
+            <img
+              class="relative w-full aspect-[4/5] object-cover rounded-xl editorial-shadow transition-all duration-500 group-hover:scale-[1.02]"
+              data-alt="portrait of a Ghanaian community leader smiling warmly in a sunlit outdoor setting with lush greenery"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3NmTRR4sL0iQ4xvqVD1D45ZCuOjvZ-ZztTAnNEI6JRt0VhPxye8Br7LYCidG5QYkUwMwtwyMMtVO20SuixwNP2AHMPhk2EOaPeOOwMye9g2KYbxmi9Cm24NAfuMxN2qImYTnHjtKqm9xXwGTcNEq4T-fjj9Ohzb7v3OX7Rccs945p7mSPkmoZM5AmDkzC8y1TLUpDzhJbeqWLnvB678Dkz-pxRgxUlMOV0mVVAJtpYalnOQxvXbFR30Nvr-hTsVt1Bdvt3yQaYCo"
+            />
+            <div
+              class="absolute -bottom-10 -left-10 bg-surface-container-lowest p-6 rounded-lg editorial-shadow max-w-[240px]"
+            >
+              <p
+                class="font-headline italic text-primary leading-tight text-lg"
+              >
+                "Every child deserves a life filled with dignity and warmth."
+              </p>
+              <p class="mt-3 text-sm font-bold text-on-surface">
+                — Akua Mensah, Founder
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Mission & Vision: Tonal Transition -->
+      <section class="bg-surface-container py-32 px-8">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+            <!-- Our Mission -->
+            <div class="space-y-8 flex flex-col justify-center">
+              <div
+                class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-tertiary-container text-on-tertiary-container"
+              >
+                <span
+                  class="material-symbols-outlined text-3xl"
+                  data-icon="volunteer_activism"
+                  >volunteer_activism</span
+                >
+              </div>
+              <h2
+                class="font-headline text-4xl font-bold text-on-surface tracking-tight"
+              >
+                Our Mission
+              </h2>
+              <p class="text-lg text-on-surface-variant leading-relaxed">
+                To empower vulnerable children and families in Ghana by
+                providing access to quality healthcare, holistic education, and
+                stable emotional support systems that foster resilience and
+                long-term self-sufficiency.
+              </p>
+              <div
+                class="p-8 bg-surface-container-lowest rounded-lg border-l-4 border-primary"
+              >
+                <h4 class="font-headline font-bold text-primary mb-2">
+                  Impact Goal 2025
+                </h4>
+                <p class="text-sm text-on-surface-variant">
+                  Scaling our healthcare reach to 5 new rural districts by
+                  December 2025.
+                </p>
+              </div>
+            </div>
+            <!-- Our Vision -->
+            <div class="relative">
+              <div
+                class="absolute -top-12 -right-12 w-48 h-48 bg-primary/10 rounded-full blur-3xl"
+              ></div>
+              <div
+                class="bg-surface-container-lowest p-12 rounded-xl editorial-shadow relative z-10 space-y-8"
+              >
+                <div
+                  class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-secondary-container text-on-secondary-container"
+                >
+                  <span
+                    class="material-symbols-outlined text-3xl"
+                    data-icon="visibility"
+                    >visibility</span
+                  >
+                </div>
+                <h2
+                  class="font-headline text-4xl font-bold text-on-surface tracking-tight"
+                >
+                  Our Vision
+                </h2>
+                <p
+                  class="text-lg text-on-surface-variant leading-relaxed italic"
+                >
+                  "A world where every Ghanaian child is nurtured in a radiant
+                  hearth of community care, ensuring they grow up healthy,
+                  educated, and equipped to lead their nation into a beautiful
+                  future."
+                </p>
+                <img
+                  class="w-full aspect-video object-cover rounded-lg"
+                  data-alt="wide shot of a group of joyful children playing in a vibrant Ghanaian village during sunset golden hour"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWyWW98wy9M-0eQyEb0snIk2OB3tTmK4PQ9ZY0JSJVx-KkmhmNugAjzZeHnpp9mQ-9KiKjkeViMTH9AhdaAGpwQmHdC60DojCRKQuBZ92R63CzuAXdoIOkENr3d-3yANmoMzKU2ZMMv6X9DQy3kcWTXxWeQzg4JyoHSe4Zyv6CrNuMifUyeeUYcVXIf9p8cks-FcIbLSy-K2ZzBeGm3HYOoFmNPWevwJ4kh92Lm_F9X5Cnl2P92jivGwc8ZZAuNLj0NmYsmOZyPDY"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Core Objectives: Bento Layout -->
+      <section class="py-32 px-8">
+        <div class="max-w-7xl mx-auto space-y-16">
+          <div class="text-center max-w-2xl mx-auto space-y-4">
+            <h2 class="font-headline text-4xl font-extrabold text-primary">
+              Core Objectives
+            </h2>
+            <p class="text-on-surface-variant text-lg font-body">
+              Our strategic pillars focus on the pillars of human dignity and
+              sustainable growth.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Obj 1 -->
+            <div
+              class="md:col-span-2 bg-surface-container-low rounded-xl p-10 flex flex-col md:flex-row gap-10 items-center hover:bg-surface-container transition-colors duration-300"
+            >
+              <div class="flex-1 space-y-4">
+                <span
+                  class="material-symbols-outlined text-primary text-4xl"
+                  data-icon="health_and_safety"
+                  >health_and_safety</span
+                >
+                <h3 class="font-headline text-2xl font-bold">
+                  Health &amp; Wellness
+                </h3>
+                <p class="text-on-surface-variant">
+                  We bridge the gap in pediatric care by facilitating mobile
+                  clinics and nutritional programs for children in remote areas.
+                </p>
+              </div>
+              <img
+                class="w-full md:w-64 h-64 object-cover rounded-lg editorial-shadow"
+                data-alt="compassionate healthcare professional examining a child in a brightly painted community clinic room"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7SOYFmcmyvO_wUIn5wqOQGorinkP1-F0hNholy6APEQCtFYo1L408JDLFwNYhYB60WLtqXe8aXVvYDtsiadq1rWIHWS_mR2IiHqO7Cy0E8J74iUGcWMV8F0C77f42Bo2WTA9fZY_5kLAZMhdEAqK7KN5a1WeCz3EXyF4MumJblXvnXVrl6Yem-Yy3qVkiDM2eogZZ5CeJffhc4blBDrF8VTsxSYqxnFeGNfoD62t1PnqTQ89TVodCecIVdzephJWT2ViqVkSWmbo"
+              />
+            </div>
+            <!-- Obj 2 -->
+            <div
+              class="bg-primary text-on-primary rounded-xl p-10 flex flex-col justify-between space-y-12"
+            >
+              <div class="space-y-4">
+                <span
+                  class="material-symbols-outlined text-on-primary text-4xl"
+                  data-icon="school"
+                  >school</span
+                >
+                <h3 class="font-headline text-2xl font-bold">
+                  Holistic Education
+                </h3>
+                <p class="opacity-90">
+                  Beyond literacy, we focus on creative problem solving, digital
+                  skills, and vocational training for older youth.
+                </p>
+              </div>
+              <div class="flex items-center gap-2 font-bold text-sm">
+                EXPLORE OUR CURRICULUM
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </div>
+            </div>
+            <!-- Obj 3 -->
+            <div class="bg-surface-container-highest rounded-xl p-10 space-y-6">
+              <div class="flex justify-between items-start">
+                <span
+                  class="material-symbols-outlined text-primary text-4xl"
+                  data-icon="diversity_3"
+                  >diversity_3</span
+                >
+              </div>
+              <h3 class="font-headline text-2xl font-bold">
+                Family Fortification
+              </h3>
+              <p class="text-on-surface-variant">
+                Empowering caregivers with micro-grants and community support
+                groups to build stable home environments.
+              </p>
+              <div class="pt-4 flex -space-x-4">
+                <div
+                  class="w-10 h-10 rounded-full border-2 border-surface-container-highest bg-slate-200"
+                ></div>
+                <div
+                  class="w-10 h-10 rounded-full border-2 border-surface-container-highest bg-slate-300"
+                ></div>
+                <div
+                  class="w-10 h-10 rounded-full border-2 border-surface-container-highest bg-slate-400"
+                ></div>
+              </div>
+            </div>
+            <!-- Obj 4 -->
+            <div
+              class="md:col-span-2 bg-secondary-container text-on-secondary-container rounded-xl p-10 flex flex-col md:flex-row-reverse gap-10 items-center"
+            >
+              <div class="flex-1 space-y-4">
+                <span
+                  class="material-symbols-outlined text-secondary text-4xl"
+                  data-icon="eco"
+                  >eco</span
+                >
+                <h3 class="font-headline text-2xl font-bold">
+                  Sustainable Roots
+                </h3>
+                <p class="opacity-90">
+                  Implementing solar water pumps and community gardens to ensure
+                  our centers are self-reliant and ecologically mindful.
+                </p>
+              </div>
+              <img
+                class="w-full md:w-64 h-64 object-cover rounded-lg editorial-shadow"
+                data-alt="lush green community garden with diverse vegetables growing under a clear blue sky"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd5L5-T7azRVJRc2oM9jEdmZwBTQK6nwZoOLXk8qOVY5rINyTrct0OpUwveraXFFdSLzg-2KoEIYPxDazq1qSBkQJx1fTS07fzWFoyzvE-_M2Mv-_bccVqTlQcW9klUnlU940tWMqigKZZjFaEDNwtdO-16K124nEq5w4rfCewsu8dhPC7aMfqWMahZyqmsUnZ6_tIf0N5dMEh4KuizmautrTdYW9MMLJRpdrrAV3DR0lFw4fQIfc3FEZzIcKMwXaprcLMcIP6gcE"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Founders & Team: Asymmetric Layout -->
+      <section class="bg-surface py-32 px-8 overflow-hidden">
+        <div
+          class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-20"
+        >
+          <div class="w-full md:w-1/2 relative">
+            <div
+              class="absolute -top-10 -left-10 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl"
+            ></div>
+            <img
+              class="w-full aspect-[3/4] object-cover rounded-xl relative z-10 editorial-shadow asymmetric-clip"
+              data-alt="portrait of Ghanaian female and male founders standing together in front of a modern educational building"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdNP6A9MNd-t1juTQgWNNV-h5RyI62ZyMqpF2Rna5w0S0FeGiPusBS5Q36uYK_3_C-EVuCI1HTrsIcaju3NBkO2yKXeh2rSudFUkd8fYMGSIlbgw2DU_r39gMmuYhmkC7b4-rQ_XCldt0Nry5A2sWG0hi6TbkFjmvfcEafchXHFKpj7T816HWS2rZ5fHsxu3EfFYtwwe9sAHSCFUbDceS4Jq-_InKDdl3daa2qau-Q5fcFo5odFb67sLPLQq5GTcnyjOpG36tTTck"
+            />
+          </div>
+          <div class="w-full md:w-1/2 space-y-8">
+            <h2 class="font-headline text-4xl font-extrabold text-primary">
+              The Hearts Behind the Foundation
+            </h2>
+            <p
+              class="text-xl font-body text-on-surface-variant leading-relaxed"
+            >
+              What started as a small local initiative by Akua and Kofi Mensah
+              has blossomed into a nationwide movement. Driven by their personal
+              experiences and deep love for their homeland, they lead a team of
+              40+ dedicated professionals.
+            </p>
+            <div class="space-y-6">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center"
+                >
+                  <span
+                    class="material-symbols-outlined text-on-primary-container"
+                    data-icon="check"
+                    >check</span
+                  >
+                </div>
+                <span class="text-lg font-medium"
+                  >Committed to 100% financial transparency</span
+                >
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center"
+                >
+                  <span
+                    class="material-symbols-outlined text-on-primary-container"
+                    data-icon="check"
+                    >check</span
+                  >
+                </div>
+                <span class="text-lg font-medium"
+                  >95% Local Ghanaian staffing</span
+                >
+              </div>
+            </div>
+            <button
+              class="bg-secondary text-white px-8 py-4 rounded-xl font-bold hover:bg-secondary-dim transition-colors editorial-shadow"
+            >
+              Join Our Team
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- CTA Section -->
+      <section class="max-w-7xl mx-auto px-8 mb-20">
+        <div
+          class="bg-primary p-16 rounded-xl relative overflow-hidden text-center space-y-8"
+        >
+          <div
+            class="absolute inset-0 bg-[linear-gradient(135deg,#a03a0f_0%,#fe7e4f_100%)] opacity-90"
+          ></div>
+          <div class="relative z-10 space-y-6">
+            <h2
+              class="font-headline text-4xl md:text-5xl font-bold text-white max-w-2xl mx-auto"
+            >
+              Help Us Build a More Beautiful Tomorrow
+            </h2>
+            <p class="text-white/80 text-xl max-w-xl mx-auto">
+              Your support directly impacts the lives of vulnerable children in
+              our programs.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center pt-8">
+              <button
+                class="bg-white text-primary px-10 py-5 rounded-full font-extrabold text-lg hover:scale-105 transition-transform duration-300"
+              >
+                Become a Partner
+              </button>
+              <button
+                class="bg-transparent border-2 border-white/40 text-white px-10 py-5 rounded-full font-extrabold text-lg hover:bg-white/10 transition-colors"
+              >
+                Make a Donation
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="w-full rounded-t-[3rem] mt-20 bg-[#f0e7d6] dark:bg-stone-900 font-['Be_Vietnam_Pro'] leading-relaxed"
+    >
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-7xl mx-auto"
+      >
+        <div class="space-y-6">
+          <span class="text-xl font-bold text-[#a03a0f]"
+            >Beautiful Life Foundation</span
+          >
+          <p class="text-[#322e25]/70 dark:text-[#fef6e7]/70 text-sm">
+            Nurturing hope and building resilience in communities across Ghana
+            through education and health.
+          </p>
+          <div class="flex gap-4">
+            <span
+              class="material-symbols-outlined text-[#a03a0f]"
+              data-icon="facebook"
+              >social_leaderboard</span
+            >
+            <span
+              class="material-symbols-outlined text-[#a03a0f]"
+              data-icon="photo_camera"
+              >photo_camera</span
+            >
+          </div>
+        </div>
+        <div class="space-y-4">
+          <h4 class="font-bold text-[#a03a0f]">Quick Links</h4>
+          <ul class="space-y-2">
+            <li>
+              <a
+                class="text-[#322e25]/70 dark:text-[#fef6e7]/70 hover:underline decoration-[#fe7e4f] decoration-2 underline-offset-4"
+                href="#"
+                >Programs</a
+              >
+            </li>
+            <li>
+              <a class="text-[#a03a0f] font-semibold" href="#"
+                >Impact Stories</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-[#322e25]/70 dark:text-[#fef6e7]/70 hover:underline decoration-[#fe7e4f] decoration-2 underline-offset-4"
+                href="#"
+                >Get Involved</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-[#322e25]/70 dark:text-[#fef6e7]/70 hover:underline decoration-[#fe7e4f] decoration-2 underline-offset-4"
+                href="#"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="space-y-4">
+          <h4 class="font-bold text-[#a03a0f]">Contact Information</h4>
+          <div
+            class="space-y-2 text-sm text-[#322e25]/70 dark:text-[#fef6e7]/70"
+          >
+            <p class="flex items-center gap-2">
+              <span
+                class="material-symbols-outlined text-xs"
+                data-icon="location_on"
+                >location_on</span
+              >
+              Accra, Ghana
+            </p>
+            <p class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-xs" data-icon="mail"
+                >mail</span
+              >
+              info@beautifullife.org
+            </p>
+            <p class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-xs" data-icon="call"
+                >call</span
+              >
+              +233 (0) 555 012 345
+            </p>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <h4 class="font-bold text-[#a03a0f]">Newsletter</h4>
+          <p class="text-xs text-[#322e25]/70 dark:text-[#fef6e7]/70">
+            Stay updated with our latest impact stories and reports.
+          </p>
+          <div class="flex gap-2">
+            <input
+              class="bg-surface-container-highest border-none rounded-lg text-sm w-full py-2 px-4 focus:ring-1 focus:ring-primary"
+              placeholder="Email address"
+              type="email"
+            />
+            <button class="bg-[#a03a0f] text-white px-4 py-2 rounded-lg">
+              <span class="material-symbols-outlined" data-icon="send"
+                >send</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="border-t border-[#322e25]/10 dark:border-[#fef6e7]/10 py-8 px-12 text-center text-xs text-[#322e25]/50 dark:text-[#fef6e7]/50"
+      >
+        © 2024 Beautiful Life Foundation Ghana. All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>
